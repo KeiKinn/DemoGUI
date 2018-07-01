@@ -1,0 +1,142 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="1162509710" file="G:\MatTemp\DemoGUI\520Demo.prj" location="G:\MatTemp\DemoGUI" name="520Demo" preferred-package-location="G:\MatTemp\DemoGUI\520Demo\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>Demo</param.appname>
+    <param.icon>${PROJECT_ROOT}\520Demo_resources\icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_16.png</file>
+    </param.icons>
+    <param.version>0.8</param.version>
+    <param.authnamewatermark>JingX</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot>${PROJECT_ROOT}\splash.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\Demo\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\520Demo\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\520Demo\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\520Demo\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\520Demomcr</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>true</param.create.log>
+    <param.log.file>log.txt</param.log.file>
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text />
+    <unset>
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+      <param.help.text />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\DemoGui.mlapp</file>
+    </fileset.main>
+    <fileset.resources />
+    <fileset.package />
+    <fileset.depfun>
+      <file>G:\Dropbox (JingX)\JingX\matFunctionByJingX\loadErrorContent.m</file>
+      <file>${PROJECT_ROOT}\image\save.png</file>
+      <file>${PROJECT_ROOT}\image\start.png</file>
+      <file>${PROJECT_ROOT}\image\stop.png</file>
+      <file>${PROJECT_ROOT}\image\ZoomIn.png</file>
+      <file>${PROJECT_ROOT}\LFMProcessing.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\520Demo\for_testing" name="splash.png" optional="false">G:\MatTemp\DemoGUI\520Demo\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\520Demo\for_testing" name="Demo.exe" optional="false">G:\MatTemp\DemoGUI\520Demo\for_testing\Demo.exe</file>
+      <file location="${PROJECT_ROOT}\520Demo\for_testing" name="readme.txt" optional="true">G:\MatTemp\DemoGUI\520Demo\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>D:\Program Files\MATLAB\R2017b</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="polyspacebugfinder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

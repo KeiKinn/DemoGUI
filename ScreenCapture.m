@@ -1,0 +1,14 @@
+outputFile = app.sF;
+robo = java.awt.Robot;
+ScreenSize = get(0,'ScreenSize');
+FigureSize = [100, 100, 1360, 669];
+FigurePosition_left =  0.5 * (ScreenSize(3)  - FigureSize(3));
+FigurePosition_bottom = 0.36 * (ScreenSize(4) - FigureSize(2));
+x = FigurePosition_left + 411;
+y = FigurePosition_bottom - 298 * 0.21;
+w = 593;
+h = 530;
+rectangle = java.awt.Rectangle(x,y,w,h);
+image1 = robo.createScreenCapture(rectangle);
+filehandle = java.io.File(outputFile);
+javax.imageio.ImageIO.write(image1,'jpg',filehandle);
