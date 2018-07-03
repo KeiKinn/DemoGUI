@@ -8,8 +8,6 @@
 Channel = 4;
 DataClipLeng = 2500;
 fs = app.srv;
-app.showFilePath.Value
-try
     fl = fopen(app.showFilePath.Value, 'r');
     counter = 0;
     while(~feof(fl))
@@ -40,30 +38,5 @@ try
         end
         counter = counter + 1;
         %%%|| - - -  User Functions  - - - ||%%%
-
-        
     end
     fclose(fl);
-catch ErrorInfo %捕获到的错误是一个MException对象
-    ErrorLogName =[ErrorInfo.stack.name, '_ErrorLog.txt'];
-    TimeStamp = datestr(now , 'yyyy/mm/dd HH:MM:SS');
-    fileID = fopen(ErrorLogName, 'w+');
-    fclose(fileID);
-    diary(ErrorLogName);
-    disp(ErrorInfo);
-    disp(ErrorInfo.cause);
-    disp(ErrorInfo.stack);
-    diary off;
-    ErrorContent = loadErrorContent(ErrorLogName);
-    RegExpression = '<.*?>';    % Find every char between <>
-    ReplaceContent = '';
-    modifyErrorContent = regexprep(ErrorContent, RegExpression, ReplaceContent);
-    modifyErrorContent = strrep(modifyErrorContent, '\', '\\');
-    EC = cellstr(modifyErrorContent)
-    ErrorCt = {};
-    for col_i = 1 : length(modifyErrorContent)
-        ErrorContentTemp =strcat(modifyErrorContent(col_i));
-        ErrorContentTemp = cellstr(ErrorContentTemp)
-    end
-    app.TextArea.Value = EC;
-end
