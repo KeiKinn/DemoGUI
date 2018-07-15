@@ -1,0 +1,1 @@
+app.SymbolRateField.Value = aSymVal;

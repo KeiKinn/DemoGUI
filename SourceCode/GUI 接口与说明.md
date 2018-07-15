@@ -100,7 +100,7 @@ GUI返回值是指最终显示在GUI的参数，如图所示Output区，主要�
 |                参数                 | 返回值格式 | 默认值 |
 | :---------------------------------: | :--------: | :----: |
 |      app.SymbolRateField.Value      |   double   |   0    |
-| app.SymbolRateUnit.Text(*optional*) |   string   |  kbps  |
+| app.SymbolRateUnit.Text(*optional*) |   string   |  bps   |
 
 备注：同信号频率。
 

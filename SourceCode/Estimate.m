@@ -1,4 +1,4 @@
-function [aSigVal1 aSigVal2 aSigVal3  aSigVal4 aSymVal]=Estimate(x,fs,modeStyle)
+function [aSigVal1 aSigVal2 aSigVal3 aSigVal4 aSymVal]=Estimate(x,fs,modeStyle)
 %
 %
 %    估计信号载频和码元速率
