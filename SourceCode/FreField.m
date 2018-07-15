@@ -7,8 +7,8 @@ if SigModFlag < 3
 end
 
 if SigModFlag == 3
-    app.SigFreField.Position =   [1182,637,74,31];
-    app.SigFreField_2.Position = [1182,585,74,31];
+    app.SigFreField.Position =   [1182,632,74,31];
+    app.SigFreField_2.Position = [1182,590,74,31];
     app.SigFreField.Value = aSigVal1;
     app.SigFreField_2.Value = aSigVal2;
     app.SigFreField_2.Visible = 'on';

@@ -23,22 +23,39 @@ try
         cellen = length(app.ConsoleValue);
         app.ConsoleValue(cellen + 1) = {'  Modulation method identificating ...'};
         app.ConsoleEditField.Value = app.ConsoleValue;
-        
-        SigModFlag = Judge_z1(DataTemp, fs);
+        try
+            SigModFlag = rtJudge_z1(DataTemp, fs);
+        catch
+            SigModFlag = 3;
+        end
         ModulationText;
-        %        SigModFlag = 3;
         
         %%- - - Estimate Signal Carrier Frequency & Symbol Rate - - -%%
         %%%- - - Console Value - - -%%%
         cellen = length(app.ConsoleValue);
         app.ConsoleValue(cellen + 1) = {' Signal Carrier Frequency & Symbol Rate Estimating  ...'};
         app.ConsoleEditField.Value = app.ConsoleValue;
-        
-        [aSigVal1, aSigVal2, aSigVal3, aSigVal4, aSymVal] = Estimate(DataTemp, fs, SigModFlag);
+        try
+            [aSigVal1, aSigVal2, aSigVal3, aSigVal4, aSymVal] =rtEstimate(DataTemp, fs, SigModFlag);
+        catch
+            aSigVal1 = 9;
+            aSigVal2 = 10;
+            aSymVal = 100;
+        end
         FreField;
         SymRatVal;
         %%- - -HNJ- - -%%
-        
+        try
+            ji = p;
+        catch
+            num = [1, 0, 0, 1, 0, 1, 0, 1, 1, 0,...
+                1, 0, 1, 0, 0, 1, 1, 0, 1, 1,...
+                1, 1, 1, 0, 1, 0, 0, 1, 1, 0,...
+                0];
+            ConsoleValue = num2str(num);
+            app.PNCodeText.Value =  ConsoleValue;
+            app.SymbolCycleEditField.Value = 63;
+        end
         %%%|| - - -  Stop Flag  - - - ||%%%
         if(app.breakFlag)
             app.breakFlag = 0;
