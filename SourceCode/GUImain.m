@@ -5,26 +5,28 @@
 
 %   ----------------------------
 %--- Initializing Parameter ---%
-Channel = 4;
-DataClipLeng = 250000;
+Channel = 1;
+DataClipLeng = 10e4;
 fs = app.srv;
 fl = fopen(app.showFilePath.Value, 'r');
 try
+    FileCounter = FileIntCounter(app.showFilePath.Value, DataClipLeng);
     counter = 0;
-    while(~feof(fl))
+    for counter_i = 1 : FileCounter
         DataTemp = fread(fl, [Channel, DataClipLeng], app.DataFormat)';
         DataTemp = DataTemp(:, 1);
         plotData;
         counter = counter + 1;
+        
         %%%|| - - -  User Functions  - - - ||%%%
         
         %%- - - Estimate  Modulation  - - -%%
         %%%- - - Console Value - - -%%%
         cellen = length(app.ConsoleValue);
-        app.ConsoleValue(cellen + 1) = {'  Modulation method identificating ...'};
+        app.ConsoleValue(cellen + 1) = {' Modulation method identificating'};
         app.ConsoleEditField.Value = app.ConsoleValue;
         try
-            SigModFlag = rtJudge_z1(DataTemp, fs);
+            SigModFlag = Judge_z1(DataTemp, fs);
         catch
             SigModFlag = 3;
         end
@@ -33,10 +35,10 @@ try
         %%- - - Estimate Signal Carrier Frequency & Symbol Rate - - -%%
         %%%- - - Console Value - - -%%%
         cellen = length(app.ConsoleValue);
-        app.ConsoleValue(cellen + 1) = {' Signal Carrier Frequency & Symbol Rate Estimating  ...'};
+        app.ConsoleValue(cellen + 1) = {' Signal Carrier Frequency & Symbol Rate Estimating'};
         app.ConsoleEditField.Value = app.ConsoleValue;
         try
-            [aSigVal1, aSigVal2, aSigVal3, aSigVal4, aSymVal] =rtEstimate(DataTemp, fs, SigModFlag);
+            [aSigVal1, aSigVal2, aSigVal3, aSigVal4, aSymVal] =Estimate(DataTemp, fs, SigModFlag);
         catch
             aSigVal1 = 9;
             aSigVal2 = 10;
@@ -62,8 +64,11 @@ try
             break;
         end
     end
+    fclose(fl);
+    ProOver;
 catch
     if fl == -1
+        ProOver;
         NoFileError;
     end
 end

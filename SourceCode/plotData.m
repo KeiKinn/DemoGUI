@@ -1,4 +1,4 @@
- TimeTag = (1 : DataClipLeng) + counter * DataClipLeng;
+TimeTag = (1 : DataClipLeng) + counter * DataClipLeng;
 plot(app.TimePlot, TimeTag, DataTemp(: ,1));
 drawnow limitrate;
 

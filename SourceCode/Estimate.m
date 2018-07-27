@@ -1,26 +1,26 @@
 function [aSigVal1 aSigVal2 aSigVal3 aSigVal4 aSymVal]=Estimate(x,fs,modeStyle)
 %
 %
-%    ¹À¼ÆÐÅºÅÔØÆµºÍÂëÔªËÙÂÊ
+%    ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½
 %
 %
-%  x ÊÇÐÅºÅ£¬×¢Òâ£¬Êý¾Ýµã²»ÄÜÌ«ÉÙ£¬±ØÐëÊÇÈ«²¿Êý¾Ý¶Î
-%  fs ÊÇÐÅºÅ²ÉÑùÆµÂÊ/Hz
-%  modeStyle ÊÇÐÅºÅµ÷ÖÆ·½Ê½´úÂë
+%  x ï¿½ï¿½ï¿½ÅºÅ£ï¿½×¢ï¿½â£¬ï¿½ï¿½ï¿½Ýµã²»ï¿½ï¿½Ì«ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½Ý¶ï¿½
+%  fs ï¿½ï¿½ï¿½ÅºÅ²ï¿½ï¿½ï¿½Æµï¿½ï¿½/Hz
+%  modeStyle ï¿½ï¿½ï¿½ÅºÅµï¿½ï¿½Æ·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
   % modeStyle  1  BPSK
   %            2  QPSK
   %            3  2FSK
   %            4  4FSK
- %aSigValX ·µ»ØÆµÂÊÖµ£¬µ¥Î»kHz
- %aSymVal ·µ»ØÂëÔªËÙÂÊ£¬µ¥Î» bps
+ %aSigValX ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Î»kHz
+ %aSymVal ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Î» bps
  
-if modeStyle==1 || modeStyle==2  %PSKÐÅºÅ
+if modeStyle==1 || modeStyle==2  %PSKï¿½Åºï¿½
     aSigVal2=0;
     aSigVal3=0;
     aSigVal4=0;
 end
 
-if  modeStyle==3 %2FSKÐÅºÅ
+if  modeStyle==3 %2FSKï¿½Åºï¿½
     aSigVal3=0;
     aSigVal4=0;
 end
@@ -33,10 +33,10 @@ dalpha = df/M;
 
 %%
 Np = pow2(nextpow2(fs/df));                                                                    
-L = Np/4;                           % ¼õÉÙ¶ÌÊ±¸µÀïÒ¶±ä»»µÄµãÊý£¬·ÀÖ¹»ìµþ£¬LÊÇÔÚÁ¬ÐøÐÐµÄÍ¬Ò»ÁÐµÄµãÖ®¼äµÄÆ«ÒÆ£¬Ó¦Ð¡ÓÚ»òµÈÓÚNP/4(Prof. Loomis paper)
+L = Np/4;                           % ï¿½ï¿½ï¿½Ù¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ä»»ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Í¬Ò»ï¿½ÐµÄµï¿½Ö®ï¿½ï¿½ï¿½Æ«ï¿½Æ£ï¿½Ó¦Ð¡ï¿½Ú»ï¿½ï¿½ï¿½ï¿½NP/4(Prof. Loomis paper)
                                     
-P = pow2(nextpow2(fs/dalpha/L));     % ÐÎ³ÉÐÅµÀ¾ØÕó(X)µÄÁÐµÄÊýÄ¿
-N = P*L;                             % ±»´¦ÀíµÄÊäÈëÊý¾ÝµãµÄ×ÜÊý
+P = pow2(nextpow2(fs/dalpha/L));     % ï¿½Î³ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½(X)ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ä¿
+N = P*L;                             % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 if length(x)<N
     x(N) = 0;
@@ -50,7 +50,7 @@ xx(NN) = 0;
 xx = xx(:);
 X = zeros(Np,P);
 for k = 0:P-1
-    X(:,k+1) = xx(k*L+1:k*L+Np);    % X = (Np X P) ÐÅµÀÊäÈë¾ØÕó
+    X(:,k+1) = xx(k*L+1:k*L+Np);    % X = (Np X P) ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 end
   
 a = hamming (Np);
@@ -131,7 +131,7 @@ SxA((length(SxA)-2):length(SxA))=0;
 
 data=fft(data);
 f=fs*(0:length(data)-1)/length(data);
-plot(f,abs(data)/max(abs(data)));
+% plot(f,abs(data)/max(abs(data)));
 
 rand1=rand(1,5)+98;
 rand2=rand(1,5)+99;

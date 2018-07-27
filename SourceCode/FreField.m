@@ -17,10 +17,11 @@ if SigModFlag == 3
 end
 
 if SigModFlag == 4
-    app.SigFreField.Position =   [1182,656,74,21];
+    app.SigFreField.Position   =   [1182,656,74,21];
     app.SigFreField_2.Position = [1182,630,74,21];
     app.SigFreField_3.Position = [1182,604,74,21];
     app.SigFreField_4.Position = [1182,578,74,21];
+    
     app.SigFreField.Value = aSigVal1;
     app.SigFreField_2.Value = aSigVal2;
     app.SigFreField_3.Value = aSigVal3;
