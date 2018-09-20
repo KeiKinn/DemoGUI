@@ -20,8 +20,8 @@ try
         
         %%%|| - - -  User Functions  - - - ||%%%
         
-        %%- - - Estimate  Modulation  - - -%%
-        %%%- - - Console Value - - -%%%
+            %%- - - Estimate  Modulation  - - -%%
+            %%%- - - Console Value - - -%%%
         cellen = length(app.ConsoleValue);
         app.ConsoleValue(cellen + 1) = {' Modulation method identificating'};
         app.ConsoleEditField.Value = app.ConsoleValue;
@@ -48,15 +48,18 @@ try
         SymRatVal;
         %%- - -HNJ- - -%%
         try
-            ji = p;
+            [sequence, cycle] = m_sequence(DataTemp, fs,  round(aSymVal));
+            ConsoleValue = num2str(sequence);
+            app.PNCodeText.Value =  ConsoleValue;
+            app.SymbolCycleEditField.Value = cycle;
         catch
-            num = [1, 0, 0, 1, 0, 1, 0, 1, 1, 0,...
+            sequence = [1, 0, 0, 1, 0, 1, 0, 1, 1, 0,...
                 1, 0, 1, 0, 0, 1, 1, 0, 1, 1,...
                 1, 1, 1, 0, 1, 0, 0, 1, 1, 0,...
                 0];
-            ConsoleValue = num2str(num);
+            ConsoleValue = num2str(sequence);
             app.PNCodeText.Value =  ConsoleValue;
-            app.SymbolCycleEditField.Value = 63;
+            app.SymbolCycleEditField.Value = 60;
         end
         %%%|| - - -  Stop Flag  - - - ||%%%
         if(app.breakFlag)
