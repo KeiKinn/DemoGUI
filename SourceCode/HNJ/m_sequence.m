@@ -60,7 +60,7 @@ signal63=(sample_signal63'*sample_signal63)/L63;
 
 
 V363=V63(:,L63);
-V463=V363((L63/2 + 1) : end);
+V463=V363(round(L63/2 + 1) : end);
 for n1=1:1:L63/2 - 1
     for n2=1:1:L63/2 - 1
         for n=1:length(V463); 

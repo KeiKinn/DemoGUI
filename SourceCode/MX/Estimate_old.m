@@ -13,6 +13,18 @@ function [aSigVal1 aSigVal2 aSigVal3 aSigVal4 aSymVal]=Estimate(x,fs,modeStyle)
   %            4  4FSK
  %aSigValX ����Ƶ��ֵ����λkHz
  %aSymVal ������Ԫ���ʣ���λ bps
+ 
+if modeStyle==1 || modeStyle==2  %PSK�ź�
+    aSigVal2=0;
+    aSigVal3=0;
+    aSigVal4=0;
+end
+
+if  modeStyle==3 %2FSK�ź�
+    aSigVal3=0;
+    aSigVal4=0;
+end
+
     
 data=x; 
 df= 4096;
@@ -38,7 +50,7 @@ xx(NN) = 0;
 xx = xx(:);
 X = zeros(Np,P);
 for k = 0:P-1
-    X(:,k+1) = xx(k*L+1:k*L+Np);    % X = (Np X P) �ŵ��������?
+    X(:,k+1) = xx(k*L+1:k*L+Np);    % X = (Np X P) �ŵ��������
 end
   
 a = hamming (Np);
@@ -132,25 +144,10 @@ peak=abs(data)/max(abs(data));
 peak1=peak(1:floor(length(peak)/2)+1);
 [x1 y1]=max(peak1);
 aSigVal1=f(y1)/1000;
+
 peak1(y1)=0;
 [x2 y2]=max(peak1);
 aSigVal2=f(y2)/1000;
-peak1(y2)=0;
-[x3 y3]=max(peak1);
-aSigVal3=f(y3)/1000;
-peak1(y3)=0;
-[x4 y4]=max(peak1);
-aSigVal4=f(y4)/1000;
-if modeStyle==1 || modeStyle==2  %PSK�ź�
-    aSigVal2=0;
-    aSigVal3=0;
-    aSigVal4=0;
-end
-
-if  modeStyle==3 %2FSK�ź�
-    aSigVal3=0;
-    aSigVal4=0;
-end
 
 [x1 y1]=max(SxA);
 Freq=alpha0(y1)/2; 
