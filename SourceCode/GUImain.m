@@ -20,8 +20,8 @@ try
         
         %%%|| - - -  User Functions  - - - ||%%%
         
-            %%- - - Estimate  Modulation  - - -%%
-            %%%- - - Console Value - - -%%%
+        %%- - - Estimate  Modulation  - - -%%
+        %%%- - - Console Value - - -%%%
         cellen = length(app.ConsoleValue);
         app.ConsoleValue(cellen + 1) = {' Modulation method identificating'};
         app.ConsoleEditField.Value = app.ConsoleValue;
@@ -53,7 +53,7 @@ try
             app.PNCodeText.Value =  ConsoleValue;
             app.SymbolCycleEditField.Value = cycle;
             
-           plot(app.SpreadingCodePlotAxe, sequence);
+            plot(app.SpreadingCodePlotAxe, sequence);
         catch
             sequence = [1, 0, 0, 1, 0, 1, 0, 1, 1, 0,...
                 1, 0, 1, 0, 0, 1, 1, 0, 1, 1,...
@@ -62,7 +62,7 @@ try
             ConsoleValue = num2str(sequence);
             app.PNCodeText.Value =  ConsoleValue;
             app.SymbolCycleEditField.Value = 60;
-             plot(app.SpreadingCodePlotAxe, sequence);
+            plot(app.SpreadingCodePlotAxe, sequence);
         end
         %%%|| - - -  Stop Flag  - - - ||%%%
         if(app.breakFlag)

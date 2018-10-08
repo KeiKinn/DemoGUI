@@ -1,0 +1,153 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3943831027" file="G:\MatTemp\DemoGUI\SourceCode\520Demo.prj" location="G:\MatTemp\DemoGUI\SourceCode" name="520Demo" preferred-package-location="E:\TWNO\sf\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>AcousticSignaloffline</param.appname>
+    <param.icon>${PROJECT_ROOT}\520Demo_resources\icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\520Demo_resources\icon_16.png</file>
+    </param.icons>
+    <param.version>0.9</param.version>
+    <param.authnamewatermark>JingX</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot>G:\MatTemp\DemoGUI\image\splash.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\AcousticSignaloffline\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>E:\TWNO\sf\for_testing</param.intermediate>
+    <param.files.only>E:\TWNO\sf\for_redistribution_files_only</param.files.only>
+    <param.output>E:\TWNO\sf\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\520Demo</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text />
+    <unset>
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+      <param.help.text />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\DemoGui.mlapp</file>
+    </fileset.main>
+    <fileset.resources />
+    <fileset.package />
+    <fileset.depfun>
+      <file>G:\MatTemp\DemoGUI\image\save.png</file>
+      <file>G:\MatTemp\DemoGUI\image\start.png</file>
+      <file>G:\MatTemp\DemoGUI\image\stop.png</file>
+      <file>G:\MatTemp\DemoGUI\image\ZoomIn.png</file>
+      <file>${PROJECT_ROOT}\GUImain.m</file>
+      <file>${PROJECT_ROOT}\HNJ\m_sequence.m</file>
+      <file>${PROJECT_ROOT}\LWY\Cyclic_Spectrum.m</file>
+      <file>${PROJECT_ROOT}\LWY\Judge_z1.m</file>
+      <file>${PROJECT_ROOT}\LWY\ModulationText.m</file>
+      <file>${PROJECT_ROOT}\MX\Estimate.m</file>
+      <file>${PROJECT_ROOT}\MX\FreField.m</file>
+      <file>${PROJECT_ROOT}\MX\SymRatVal.m</file>
+      <file>${PROJECT_ROOT}\subPro\FileIntCounter.m</file>
+      <file>${PROJECT_ROOT}\subPro\NoFileError.m</file>
+      <file>${PROJECT_ROOT}\subPro\plotData.m</file>
+      <file>${PROJECT_ROOT}\subPro\ProOver.m</file>
+      <file>${PROJECT_ROOT}\subPro\ScreenCapture.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="E:\TWNO\sf\for_testing" name="readme.txt" optional="true">E:\TWNO\sf\for_testing\readme.txt</file>
+      <file location="E:\TWNO\sf\for_testing" name="splash.png" optional="false">E:\TWNO\sf\for_testing\splash.png</file>
+      <file location="E:\TWNO\sf\for_testing" name="AcousticSignaloffline.exe" optional="false">E:\TWNO\sf\for_testing\AcousticSignaloffline.exe</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>D:\Program Files\MATLAB\R2017b</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="polyspacebugfinder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
