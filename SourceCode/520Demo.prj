@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3943831027" file="G:\MatTemp\DemoGUI\SourceCode\520Demo.prj" location="G:\MatTemp\DemoGUI\SourceCode" name="520Demo" preferred-package-location="E:\TWNO\sf\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>AcousticSignaloffline</param.appname>
+  <configuration build-checksum="2902126896" file="G:\MatTemp\DemoGUI\SourceCode\520Demo.prj" location="G:\MatTemp\DemoGUI\SourceCode" name="520Demo" preferred-package-location="E:\TWNO\sf\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>AcousticSignal</param.appname>
     <param.icon>${PROJECT_ROOT}\520Demo_resources\icon.ico</param.icon>
     <param.icons>
       <file>${PROJECT_ROOT}\520Demo_resources\icon_48.png</file>
@@ -8,22 +8,32 @@
       <file>${PROJECT_ROOT}\520Demo_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\520Demo_resources\icon_16.png</file>
     </param.icons>
-    <param.version>0.9</param.version>
+    <param.version>1.2</param.version>
     <param.authnamewatermark>JingX</param.authnamewatermark>
     <param.email />
     <param.company />
-    <param.summary />
-    <param.description />
-    <param.screenshot>G:\MatTemp\DemoGUI\image\splash.png</param.screenshot>
+    <param.summary>The estimated installation space is 2.9G, please ensure that there is enough space on the disk.</param.summary>
+    <param.description>The software is used for identifying the modulation mode of the spread spectrum underwater acoustic signal, and estimating the modulation frequency, the symbol rate, and the spreading code period.</param.description>
+    <param.screenshot>G:\MatTemp\DemoGUI\image\splash1.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>\AcousticSignaloffline\</param.installpath.string>
+    <param.installpath.string>\AcousticSignal\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
-    <param.logo />
-    <param.install.notes />
+    <param.logo>G:\MatTemp\DemoGUI\image\logo1.png</param.logo>
+    <param.install.notes>LICENSE
+Please Notice
+
+The software distribution is based on the GPL protocol.
+___   __   ___       ___ ___    ____    __   _ ____         ___    
+|__|   |     |   | |   | [__  |   |  |       [__   |  | __   |\ |   |__| |    
+|   |   |__  |__| |__| ___]  |   |  |___    ___] |  |_ _]  | \|  |   | |___ 
+                                                                 
+The licenses for most software and other practical works are designed to take away your freedom to share and change the works. By contrast, the GNU General Public License is intended to guarantee your freedom to share and change all versions of a program--to make sure it remains free software for all its users. We, the Free Software Foundation, use the GNU General Public License for most of our software; it applies also to any other work released this way by its authors. 
+
+The software is jointly developed by Jing Xin, Gui Xudong, Mei Xiao, Huang Ningjie and Liu Weiye.</param.install.notes>
     <param.target.install.notes />
-    <param.intermediate>E:\TWNO\sf\for_testing</param.intermediate>
-    <param.files.only>E:\TWNO\sf\for_redistribution_files_only</param.files.only>
-    <param.output>E:\TWNO\sf\for_redistribution</param.output>
+    <param.intermediate>E:\TWNO\guitest\for_testing</param.intermediate>
+    <param.files.only>E:\TWNO\guitest\for_redistribution_files_only</param.files.only>
+    <param.output>E:\TWNO\guitest\for_redistribution</param.output>
     <param.logdir>${PROJECT_ROOT}\520Demo</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
@@ -45,12 +55,9 @@
     <unset>
       <param.email />
       <param.company />
-      <param.summary />
-      <param.description />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
-      <param.logo />
       <param.target.install.notes />
       <param.logdir />
       <param.enable.clean.build />
@@ -73,7 +80,9 @@
       <file>${PROJECT_ROOT}\DemoGui.mlapp</file>
     </fileset.main>
     <fileset.resources />
-    <fileset.package />
+    <fileset.package>
+      <file>${PROJECT_ROOT}\subPro\lic.t</file>
+    </fileset.package>
     <fileset.depfun>
       <file>G:\MatTemp\DemoGUI\image\save.png</file>
       <file>G:\MatTemp\DemoGUI\image\start.png</file>
@@ -87,32 +96,32 @@
       <file>${PROJECT_ROOT}\MX\Estimate.m</file>
       <file>${PROJECT_ROOT}\MX\FreField.m</file>
       <file>${PROJECT_ROOT}\MX\SymRatVal.m</file>
+      <file>${PROJECT_ROOT}\subPro\clearall.m</file>
+      <file>${PROJECT_ROOT}\subPro\closeOutput.m</file>
       <file>${PROJECT_ROOT}\subPro\FileIntCounter.m</file>
+      <file>${PROJECT_ROOT}\subPro\licCheck.p</file>
       <file>${PROJECT_ROOT}\subPro\NoFileError.m</file>
+      <file>${PROJECT_ROOT}\subPro\openOutput.m</file>
       <file>${PROJECT_ROOT}\subPro\plotData.m</file>
       <file>${PROJECT_ROOT}\subPro\ProOver.m</file>
       <file>${PROJECT_ROOT}\subPro\ScreenCapture.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="E:\TWNO\sf\for_testing" name="readme.txt" optional="true">E:\TWNO\sf\for_testing\readme.txt</file>
-      <file location="E:\TWNO\sf\for_testing" name="splash.png" optional="false">E:\TWNO\sf\for_testing\splash.png</file>
-      <file location="E:\TWNO\sf\for_testing" name="AcousticSignaloffline.exe" optional="false">E:\TWNO\sf\for_testing\AcousticSignaloffline.exe</file>
+      <file location="E:\TWNO\guitest\for_testing" name="readme.txt" optional="true">E:\TWNO\guitest\for_testing\readme.txt</file>
+      <file location="E:\TWNO\guitest\for_testing" name="splash.png" optional="false">E:\TWNO\guitest\for_testing\splash.png</file>
+      <file location="E:\TWNO\guitest\for_testing" name="AcousticSignal.exe" optional="false">E:\TWNO\guitest\for_testing\AcousticSignal.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>D:\Program Files\MATLAB\R2017b</root>
+      <root>D:\Program Files\MATLAB\R2018b</root>
       <toolboxes>
-        <toolbox name="fixedpoint" />
         <toolbox name="matlabcoder" />
         <toolbox name="embeddedcoder" />
-        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
         <toolbox name="polyspacebugfinder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
@@ -124,14 +133,24 @@
         </embeddedcoder>
       </toolbox>
       <toolbox>
-        <gpucoder>
+        <fixedpoint>
           <enabled>true</enabled>
-        </gpucoder>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
       </toolbox>
       <toolbox>
         <polyspacebugfinder>
           <enabled>true</enabled>
         </polyspacebugfinder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>

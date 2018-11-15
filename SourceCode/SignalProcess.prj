@@ -17,7 +17,7 @@
       <item>1</item>
     </param.products.id>
     <param.products.version>
-      <item>9.3</item>
+      <item>9.5</item>
     </param.products.version>
     <param.platforms />
     <param.output>E:\TWNO</param.output>
@@ -63,19 +63,15 @@
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>D:\Program Files\MATLAB\R2017b</root>
+      <root>D:\Program Files\MATLAB\R2018b</root>
       <toolboxes>
-        <toolbox name="fixedpoint" />
         <toolbox name="matlabcoder" />
         <toolbox name="embeddedcoder" />
-        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
         <toolbox name="polyspacebugfinder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
@@ -87,14 +83,24 @@
         </embeddedcoder>
       </toolbox>
       <toolbox>
-        <gpucoder>
+        <fixedpoint>
           <enabled>true</enabled>
-        </gpucoder>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
       </toolbox>
       <toolbox>
         <polyspacebugfinder>
           <enabled>true</enabled>
         </polyspacebugfinder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>

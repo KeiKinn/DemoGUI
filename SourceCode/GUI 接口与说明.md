@@ -111,3 +111,7 @@ GUI返回值是指最终显示在GUI的参数，如图所示Output区，主要�
 | app.ConsoleEditField.Value |   string   |  null  |
 
 目的是将PN码显示在Console中，由于Console只能显示文字，需要将PN码利用num2str()转为num转为string
+
+## licCheck
+
+将文件中lic_xxxxxx.t 修改为 lic.t，即可正常使用软件对licence 进行校验。
